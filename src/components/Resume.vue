@@ -51,7 +51,6 @@
                             <li>JavaScript</li>
                             <li>jQuery</li>
                             <li>Vue.js</li>
-                            <li>AngularJS 1.x</li>
                         </ul>
                     </div>
 
@@ -64,8 +63,9 @@
                             <li>Node.js</li>
                             <li>Express</li>
                             <li>MongoDB</li>
+                            <li>Entity Framework</li>
                             <li>C#</li>
-                            <li>ASP.NET Core</li>
+                            <li>.NET Core</li>
                         </ul>
                     </div>
 
@@ -212,6 +212,7 @@
         font-weight: normal;
     }
  */
+
     ul {
         list-style-type: none;
         padding: 0;

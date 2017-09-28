@@ -86,13 +86,16 @@
     <main>
       <v-container fluid>
         <v-slide-y-transition mode="out-in">
-          <v-layout column align-center>
+          <v-row>
 
-            <!--  Build Main Content Here: -->
-            <router-view></router-view>
-            <!-- Build Main Content Here -->
+            <v-layout column align-center>
 
-          </v-layout>
+              <!--  Build Main Content Here: -->
+              <router-view></router-view>
+              <!-- Build Main Content Here -->
+
+            </v-layout>
+          </v-row>
         </v-slide-y-transition>
       </v-container>
     </main>
