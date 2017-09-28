@@ -5,7 +5,7 @@
                 <h1 class="text-xs-center brief-heading">Spencer Henze</h1>
                 <img src="http://res.cloudinary.com/dvh7zccln/image/upload/v1500728010/DSC_5330-Cropped_c8nvge.jpg" class="img-circle img-responsive profile-image"
                     alt="Picture of Spencer Henze">
-                <h3 class="brief-heading">Contact</h3>
+                <h class="brief-heading">Contact</h>
                 <ul class="no-bullets">
                     <li>
                         <i class="fa fa-phone" aria-hidden="true"></i>&nbsp&nbsp <a href="tel:2088715839">(208) 871-5839</a>
@@ -29,9 +29,9 @@
                 <div class="row center-columns-in-row">
                     <!--IT Skills  -->
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <h3>
+                        <h6>
                             <i class="fa fa-database" aria-hidden="true"></i>&nbsp IT
-                        </h3>
+                        </h6>
                         <ul>
                             <li>Systems Architecture</li>
                             <li>Enterprise Networks</li>
@@ -41,9 +41,9 @@
 
                     <!--Front-end Skills  -->
                     <div id="front-end-skills" class="col-xs-12 col-sm-4 col-md-3">
-                        <h3>
+                        <h6>
                             <i class="fa fa-code" aria-hidden="true"></i>&nbsp Front-End Web
-                        </h3>
+                        </h6>
                         <ul>
                             <li>HTML5</li>
                             <li>CSS3</li>
@@ -56,9 +56,9 @@
 
                     <!--Back-end Skills  -->
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <h3>
+                        <h6>
                             <i class="fa fa-cogs" aria-hidden="true"></i>&nbsp Back-End Web
-                        </h3>
+                        </h6>
                         <ul>
                             <li>Node.js</li>
                             <li>Express</li>
@@ -76,26 +76,26 @@
                 <div class="education-wrapper">
                     <h2 class="resume-section-heading">Education</h2>
                     <!--Education item 1  -->
-                    <h3>
+                    <h6>
                         <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp Boise CodeWorks
-                    </h3>
+                    </h6>
                     <ul class="no-bullets">
                         <li>Immersive Full Stack</li>
                         <li>Summer 2017</li>
                     </ul>
                     <!--education item 2  -->
-                    <h3>
+                    <h6>
                         <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp Boise State University
-                    </h3>
+                    </h6>
                     <ul class="no-bullets">
                         <li>2013 - 2017</li>
                         <li>Bachelor of Business Administration in IT Management</li>
                         <li>3.5 GPA</li>
                     </ul>
                     <!--education item 3  -->
-                    <h3>
+                    <h6>
                         <i class="fa fa-certificate" aria-hidden="true"></i>&nbsp Boise State University
-                    </h3>
+                    </h6>
                     <ul class="no-bullets">
                         <li>2013 - 2017</li>
                         <li>Intermediate Spanish Certificate</li>
@@ -109,9 +109,9 @@
                 <div class="work-history-wrapper">
                     <h2 class="resume-section-heading">Work History</h2>
                     <!--work item 1  -->
-                    <h3>
+                    <h6>
                         <i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp IT Consultant
-                    </h3>
+                    </h6>
                     <div class="row work-detail-row">
                         <div class="col-xs-12 col-sm-4">
                             <ul class="no-bullets">
@@ -130,9 +130,9 @@
                         </div>
                     </div>
                     <!--Work item 2  -->
-                    <h3>
+                    <h6>
                         <i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp Owner / Photographer
-                    </h3>
+                    </h6>
                     <div class="row work-detail-row">
                         <div class="col-xs-12 col-sm-4">
                             <ul class="no-bullets">
@@ -151,9 +151,9 @@
                         </div>
                     </div>
                     <!--Work item 3  -->
-                    <h3>
+                    <h6>
                         <i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp Maintenance Specialist
-                    </h3>
+                    </h6>
                     <div class="row work-detail-row">
                         <div class="col-xs-12 col-sm-4">
                             <ul class="no-bullets">
@@ -171,9 +171,9 @@
                     </div>
 
                     <!--Work item 4  -->
-                    <h3>
+                    <h6>
                         <i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp Outside Sales Representitive
-                    </h3>
+                    </h6>
                     <div class="row work-detail-row">
                         <div class="col-xs-12 col-sm-4">
                             <ul class="no-bullets">
@@ -207,11 +207,12 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    /* h1,
-    h2 {
-        font-weight: normal;
-    }
- */
+    /* h6 {
+        font-size:24px;
+        font-weight:100;
+        line-height:
+    } */
+
 
     ul {
         list-style-type: none;
@@ -239,13 +240,15 @@
     }
 
     .brief-heading {
+        font-weight:100;
+        font-size: 5em;
         text-align: center;
         margin-bottom: 2rem;
     }
 
     .resume-section-heading {
         text-align: center;
-        font-weight: bold;
+        /* font-weight: bold; */
         letter-spacing: 4px;
     }
 

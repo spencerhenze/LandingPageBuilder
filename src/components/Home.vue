@@ -1,17 +1,8 @@
 <template>
   <div class="home">
-    <v-layout row>
-      <v-flex xs12 class="text-xs-center">
-        <!-- <h2>Spencer Henze</h2>
-        <h3>Full-Stack Developer</h3> -->
-        <!-- parallax image -->
-        <!-- <skills></skills> -->
-        <!-- parallax image -->
-      </v-flex>
-    </v-layout>
     <!-- parallax template -->
-    <section>
-      <v-parallax src="assets/hero.jpeg" height="600">
+    <section class="cover-view">
+      <v-parallax src="assets/hero.jpeg">
         <v-layout column align-center justify-center class="white--text">
           <!-- <img src="assets/vuetify.png" alt="Vuetify.js"> -->
           <h1 class=" text-xs-center white--text mb-2 display-3">Spencer Henze</h1>
@@ -23,13 +14,47 @@
       </v-parallax>
     </section>
 
+
+    <section>
+      <v-parallax class="parallax-image" src="//res.cloudinary.com/dvh7zccln/image/upload/v1506560973/SHP_0282_e5rzfg.jpg" height="800">
+        <v-layout row text-center>
+          <v-flex xs12>
+            <h3 class="white--text mb-3 mt-5">Recent Projects</h3>
+            <em>See what i've been up to</em>
+          </v-flex>
+        </v-layout>
+
+
+        <v-layout row wrap text-center>
+
+          <v-flex xs12 sm3 offset-sm1>
+            <v-card class="elevation-24 grey project-card">
+              <v-card-media src="http://res.cloudinary.com/dvh7zccln/image/upload/v1506626855/Kanban_iyyooc.png" height="250px"></v-card-media>
+              <v-card-title primary-title class="layout justify-center">
+                <div class="headline text-xs-center">Kanban</div>
+              </v-card-title>
+              <v-card-text>
+                <img src="../assets/icons/vuejs.png">
+              </v-card-text>
+            </v-card>
+          </v-flex>
+        </v-layout>
+
+        <v-btn class="blue lighten-2 mt-5" dark large href="/pre-made-themes">
+          See More
+        </v-btn>
+
+        <!-- <v-layout row></v-layout> -->
+      </v-parallax>
+    </section>
+
     <section>
       <v-layout column wrap class="my-5" align-center>
         <v-flex xs12 sm4 class="my-3">
           <div class="text-xs-center">
-            <h2 class="headline">The best way to start developing</h2>
+            <h2 class="headline">Recent Projects</h2>
             <span class="subheading">
-                Cras facilisis mi vitae nunc 
+                See what I've been up to 
               </span>
           </div>
         </v-flex>
@@ -87,17 +112,6 @@
       </v-layout>
     </section>
 
-    <section>
-      <v-parallax class="parallax-image" src="//res.cloudinary.com/dvh7zccln/image/upload/v1506560973/SHP_0282_e5rzfg.jpg" height="380">
-        <v-layout column align-center justify-center>
-          <div class="headline white--text mb-3">Recent Projects</div>
-          <em>See what i've been up to</em>
-          <v-btn class="blue lighten-2 mt-5" dark large href="/pre-made-themes">
-            Get Started
-          </v-btn>
-        </v-layout>
-      </v-parallax>
-    </section>
 
     <section>
       <v-container grid-list-xl>
@@ -198,5 +212,19 @@
   .parallax-image {
     margin-left: -24px !important;
     margin-right: -24px !important;
+  }
+
+  .project-card {
+    width: 100%
+  }
+
+  .cover-view {
+    height: 100vh;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .cover-view {
+      height: 40vh;
+    }
   }
 </style>
