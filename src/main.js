@@ -5,8 +5,10 @@ import Vuetify from 'vuetify'
 import './stylus/main.styl'
 import App from './App'
 import router from './router'
+import VueTyper from 'vue-typer'
 
 Vue.use(Vuetify)
+Vue.use(VueTyper)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

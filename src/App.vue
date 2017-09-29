@@ -87,9 +87,9 @@
       <v-container fluid>
         <v-slide-y-transition mode="out-in">
 
-              <!--  Build Main Content Here: -->
-              <router-view></router-view>
-              <!-- Build Main Content Here -->
+          <!--  Build Main Content Here: -->
+          <router-view></router-view>
+          <!-- Build Main Content Here -->
 
         </v-slide-y-transition>
       </v-container>

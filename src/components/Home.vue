@@ -6,7 +6,8 @@
         <v-layout column align-center justify-center class="white--text">
           <!-- <img src="assets/vuetify.png" alt="Vuetify.js"> -->
           <h1 class=" text-xs-center white--text mb-2 display-3">Spencer Henze</h1>
-          <div class="headline mb-3 text-xs-center">Full-Stack Developer</div>
+          <vue-typer class="headline mb-3 text-xs-center" text="> Full-Stack Developer" repeat='0' pre-type-delay="1000" type-delay="70">
+          </vue-typer>
           <v-btn class="blue lighten-2 mt-5" dark large href="/pre-made-themes">
             Get Started
           </v-btn>
@@ -174,15 +175,17 @@
 <script>
   import Resume from './Resume'
 
+
   export default {
     name: 'home',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
       }
     },
     components: {
       Resume
+    },
+    mounted() {
     }
   }
 
@@ -194,6 +197,26 @@
   h2 {
     font-weight: normal;
   }
+
+  .vue-typer {
+    font-family: monospace;
+    color: white;
+  }
+
+  .vue-typer .custom.char.typed {
+    color: white;
+  }
+
+  .vue-typer .custom.char {
+    color: #D4D4BD;
+  }
+
+
+  .vue-typer .custom.caret {
+    width: 10px;
+    display: "|";
+  }
+
 
   ul {
     list-style-type: none;

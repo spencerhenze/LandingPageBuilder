@@ -5,7 +5,7 @@
                 <h1 class="text-xs-center brief-heading">Spencer Henze</h1>
                 <img src="http://res.cloudinary.com/dvh7zccln/image/upload/v1500728010/DSC_5330-Cropped_c8nvge.jpg" class="img-circle img-responsive profile-image"
                     alt="Picture of Spencer Henze">
-                <h class="brief-heading">Contact</h>
+                <h6 class="brief-heading">Contact</h6>
                 <ul class="no-bullets">
                     <li>
                         <i class="fa fa-phone" aria-hidden="true"></i>&nbsp&nbsp <a href="tel:2088715839">(208) 871-5839</a>
@@ -23,7 +23,7 @@
             </v-flex>
 
             <!--main content column  -->
-            <v-flex xs12 md7>
+            <v-flex xs12 md6 offset-md1>
 
                 <h2 class="resume-section-heading">Skills</h2>
                 <div class="row center-columns-in-row">
@@ -207,11 +207,10 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    /* h6 {
-        font-size:24px;
-        font-weight:100;
-        line-height:
-    } */
+    h6 {
+        font-size: 24px;
+        font-weight: 100;
+    }
 
 
     ul {
@@ -240,7 +239,7 @@
     }
 
     .brief-heading {
-        font-weight:100;
+        font-weight: 100;
         font-size: 5em;
         text-align: center;
         margin-bottom: 2rem;
