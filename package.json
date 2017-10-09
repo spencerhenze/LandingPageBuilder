@@ -10,11 +10,14 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.16.2",
+    "jquery": "^3.2.1",
     "typed.js": "^2.0.6",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0",
     "vue-typer": "^1.0.6",
-    "vuetify": "^0.15.7"
+    "vuetify": "^0.15.7",
+    "vuex": "^2.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

@@ -3,7 +3,7 @@
         <v-layout row wrap>
             <v-flex xs12 md3 offset-md1 class="brief-column">
                 <h1 class="text-xs-center brief-heading">Spencer Henze</h1>
-                <img src="http://res.cloudinary.com/dvh7zccln/image/upload/v1500728010/DSC_5330-Cropped_c8nvge.jpg" class="img-circle img-responsive profile-image"
+                <img src="//res.cloudinary.com/dvh7zccln/image/upload/v1500728010/DSC_5330-Cropped_c8nvge.jpg" class="img-circle img-responsive profile-image"
                     alt="Picture of Spencer Henze">
                 <h6 class="brief-heading">Contact</h6>
                 <ul class="no-bullets">

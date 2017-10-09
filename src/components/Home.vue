@@ -2,17 +2,30 @@
   <div class="home">
     <!-- parallax template -->
     <section class="cover-view">
-      <v-parallax src="assets/hero.jpeg">
-        <v-layout column align-center justify-center class="white--text">
-          <!-- <img src="assets/vuetify.png" alt="Vuetify.js"> -->
-          <h1 class=" text-xs-center white--text mb-2 display-3">Spencer Henze</h1>
-          <vue-typer class="headline mb-3 text-xs-center" text="> Full-Stack Developer" repeat='0' pre-type-delay="1000" type-delay="70">
-          </vue-typer>
-          <v-btn class="blue lighten-2 mt-5" dark large href="/pre-made-themes">
-            Get Started
-          </v-btn>
+      
+      <v-container justify-space-between class="cover-page-container">
+        
+        <v-layout row>
+          <v-flex xs12 class="white--text site-header">
+            <img class="img-circle img-responsive profile-image" src="//res.cloudinary.com/dvh7zccln/image/upload/v1500728010/DSC_5330-Cropped_c8nvge.jpg"
+              alt="">
+            <h1 class=" text-xs-center white--text mb-2 display-3">Spencer Henze</h1>
+            <vue-typer class="headline mb-3 text-xs-center" style="margin-top:15px" text="> Full-Stack Developer" repeat='0' pre-type-delay="1000"
+              type-delay="70">
+            </vue-typer>
+            <!-- <v-btn class="blue lighten-2 mt-5" dark large href="/pre-made-themes">
+                Get Started
+              </v-btn> -->
+          </v-flex>
         </v-layout>
-      </v-parallax>
+
+        <v-layout row>
+          <v-flex xs12 class="site-header">
+            <v-icon large>mdi-chevron-down</v-icon>
+          </v-flex>
+        </v-layout>
+
+      </v-container>
     </section>
 
 
@@ -175,7 +188,6 @@
 <script>
   import Resume from './Resume'
 
-
   export default {
     name: 'home',
     data() {
@@ -192,10 +204,29 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+  .cover-page-container {
+    height: 100%;
+  }
+
+  .site-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   h1,
   h2 {
     font-weight: normal;
+  }
+
+  .profile-image {
+    max-height: 220px;
+    max-width: auto;
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .vue-typer {
@@ -214,7 +245,6 @@
 
   .vue-typer .custom.caret {
     width: 10px;
-    display: "|";
   }
 
 
@@ -244,10 +274,9 @@
   .cover-view {
     height: 100vh;
   }
-
-  @media screen and (min-width: 1024px) {
+  /* @media screen and (min-width: 1024px) {
     .cover-view {
-      height: 40vh;
+      height: 70vh;
     }
-  }
+  } */
 </style>

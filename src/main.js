@@ -5,6 +5,7 @@ import Vuetify from 'vuetify'
 import './stylus/main.styl'
 import App from './App'
 import router from './router'
+import store from './store'
 import VueTyper from 'vue-typer'
 
 Vue.use(Vuetify)
@@ -15,6 +16,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
