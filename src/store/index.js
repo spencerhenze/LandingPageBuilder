@@ -30,16 +30,63 @@ var store = new vuex.Store({
         loggedIn: false,
         projects: [
             {
-                image: '',
-                title: '',
-                description: '',
+                image: 'http://res.cloudinary.com/dvh7zccln/image/upload/v1507599033/icons/Screen_Shot_2017-10-09_at_7.29.41_PM.png',
+                title: 'Keepr',
+                description: 'A Pintrest clone, set up with Vue.js, Node, Bootstrap and MongoDB. This project highlights the major topics learned during the majority of the time at Boise Codeworks.',
                 icons: [
-                    
+                    {
+                        name: "Vue",
+                        path: "http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/logo.png"
+                    },
+                    {
+                        name: "Node",
+                        path: "http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/nodejslogo.png"
+                    },
+                    {
+                        name: "Mongo DB",
+                        path: "http://res.cloudinary.com/dvh7zccln/image/upload/v1507599756/icons/mongodb_copy.png"
+                    }
+
+
                 ],
                 skills: [
+                    "Vue",
+                    "Javascript",
+                    "MongoDb",
+                    "NodeJs"
+                ],
+                link: "https://awesome-keepr.herokuapp.com"
+            },
+            {
+                image: 'http://res.cloudinary.com/dvh7zccln/image/upload/v1507598119/icons/Screen_Shot_2017-10-09_at_7.14.27_PM.png',
+                title: 'Vue Kanban',
+                description: 'Full stack application using Vue, Node, Boostrap and MongoDB to build Kanban boards to better help users with project management. (similar to trello).',
+                icons: [
+                    {
+                        name: "Vue",
+                        path: "http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/logo.png"
+                    },
+                    {
+                        name: "Node",
+                        path: "http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/nodejslogo.png"
+                    },
+                    {
+                        name: "Mongo DB",
+                        path: "http://res.cloudinary.com/dvh7zccln/image/upload/v1507599756/icons/mongodb_copy.png"
+                    }
 
-                ]
-            }
+
+                ],
+                skills: [
+                    "Vue",
+                    "Javascript",
+                    "MongoDb",
+                    "NodeJs"
+
+                ],
+                link: "https://zen-kanban.herokuapp.com"
+            },
+
 
         ],
         loginWindow: false,
@@ -54,6 +101,6 @@ var store = new vuex.Store({
     actions: {
 
     }
-}) 
+})
 
 export default store;

@@ -2,26 +2,23 @@
   <div class="home">
     <!-- parallax template -->
     <section class="cover-view">
-      
-      <v-container justify-space-between class="cover-page-container">
-        
+
+      <v-container class="cover-page-container">
+
         <v-layout row>
           <v-flex xs12 class="white--text site-header">
             <img class="img-circle img-responsive profile-image" src="//res.cloudinary.com/dvh7zccln/image/upload/v1500728010/DSC_5330-Cropped_c8nvge.jpg"
               alt="">
             <h1 class=" text-xs-center white--text mb-2 display-3">Spencer Henze</h1>
-            <vue-typer class="headline mb-3 text-xs-center" style="margin-top:15px" text="> Full-Stack Developer" repeat='0' pre-type-delay="1000"
+            <vue-typer class="text--white typer-text" style="margin-top:15px" text="> Full-Stack Developer" repeat='0' pre-type-delay="1000"
               type-delay="70">
             </vue-typer>
-            <!-- <v-btn class="blue lighten-2 mt-5" dark large href="/pre-made-themes">
-                Get Started
-              </v-btn> -->
           </v-flex>
         </v-layout>
 
         <v-layout row>
           <v-flex xs12 class="site-header">
-            <v-icon large>mdi-chevron-down</v-icon>
+            <v-icon id="scroll-down-icon">mdi-chevron-down</v-icon>
           </v-flex>
         </v-layout>
 
@@ -30,58 +27,103 @@
 
 
     <section>
-      <v-parallax class="parallax-image" src="//res.cloudinary.com/dvh7zccln/image/upload/v1506560973/SHP_0282_e5rzfg.jpg" height="800">
-        <v-layout row text-center>
-          <v-flex xs12>
-            <h3 class="white--text mb-3 mt-5">Recent Projects</h3>
-            <em>See what i've been up to</em>
+
+      <v-parallax class="parallax-image" src="//res.cloudinary.com/dvh7zccln/image/upload/v1506560973/SHP_0282_e5rzfg.jpg" :height="clientHeight">
+        <v-container fluid grid-list-md class="transparent" style="display:flex">
+
+          <v-layout row text-center class="objective-statement-container">
+            <v-flex xs12 sm8 class="objective-statement">
+              <v-card class="elevation-20">
+                <v-card-media src="http://res.cloudinary.com/dvh7zccln/image/upload/v1507596361/icons/shutterstock_320549678.jpg" height="300">
+                  <v-container fill-height fluid>
+                    <v-layout fill-height>
+                      <v-flex xs12 align-end flexbox>
+                        <div class="headline white--text">Objective</div>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+
+                </v-card-media>
+                <v-card-actions class="white">
+                  <v-spacer></v-spacer>
+                  <v-btn icon>
+                    <v-icon class="grey--text">share</v-icon>
+                  </v-btn>
+                </v-card-actions>
+
+                <!-- description and counter displays -->
+                <v-card-text>
+                  To apply a solid 4-year education in business IT systems, along with 3.5 years of small business administration experience
+                  to an Jr. level software developer position in a growing business that can benefit from a motivated and
+                  business savvy team member who is excited to learn and continually add value to the company.
+                  <v-layout row>
+                    <v-flex xs12>
+                      <router-link :to="{ name: 'Resume' }">
+                        <v-btn primary dark style=" margin-top:20px; ">View Resume</v-btn>
+                      </router-link>
+                    </v-flex>
+                  </v-layout>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+
+        <v-layout row>
+          <v-flex xs6>
+
           </v-flex>
         </v-layout>
-
-
-        <v-layout row wrap text-center>
-
-          <v-flex xs12 sm3 offset-sm1>
-            <v-card class="elevation-24 grey project-card">
-              <v-card-media src="http://res.cloudinary.com/dvh7zccln/image/upload/v1506626855/Kanban_iyyooc.png" height="250px"></v-card-media>
-              <v-card-title primary-title class="layout justify-center">
-                <div class="headline text-xs-center">Kanban</div>
-              </v-card-title>
-              <v-card-text>
-                <img src="../assets/icons/vuejs.png">
-              </v-card-text>
-            </v-card>
-          </v-flex>
-        </v-layout>
-
-        <v-btn class="blue lighten-2 mt-5" dark large href="/pre-made-themes">
-          See More
-        </v-btn>
 
         <!-- <v-layout row></v-layout> -->
       </v-parallax>
     </section>
 
     <section>
-      <v-layout column wrap class="my-5" align-center>
-        <v-flex xs12 sm4 class="my-3">
+      <v-layout column wrap align-center>
+        <v-flex xs12>
           <div class="text-xs-center">
-            <h2 class="headline">Recent Projects</h2>
-            <span class="subheading">
-                See what I've been up to 
-              </span>
+            <h2 class="section-title">Recent Projects</h2>
+          </div>
+        </v-flex>
+      </v-layout>
+      <v-container fluid grid-list-md class="transparent ">
+
+        <v-layout row wrap text-center>
+
+          <v-flex xs12 sm4 v-for="card in projects ">
+            <PortfolioSample :card="card "></PortfolioSample>
+          </v-flex>
+        </v-layout>
+
+      </v-container>
+
+      <v-btn class="blue lighten-2 mt-5 " dark large href="/pre-made-themes ">
+        See More
+      </v-btn>
+
+    </section>
+
+    <section>
+      <v-layout column wrap class="my-5 " align-center>
+        <v-flex xs12 sm4 class="my-3 ">
+          <div class="text-xs-center ">
+            <h2 class="headline ">Recent Projects</h2>
+            <span class="subheading ">
+              See what I've been up to
+            </span>
           </div>
         </v-flex>
         <v-flex xs12>
           <v-container grid-list-xl>
             <v-layout row wrap align-center>
               <v-flex xs12 md4>
-                <v-card class="elevation-0 transparent">
-                  <v-card-text class="text-xs-center">
-                    <v-icon x-large class="blue--text text--lighten-2">color_lens</v-icon>
+                <v-card class="elevation-0 transparent ">
+                  <v-card-text class="text-xs-center ">
+                    <v-icon x-large class="blue--text text--lighten-2 ">color_lens</v-icon>
                   </v-card-text>
-                  <v-card-title primary-title class="layout justify-center">
-                    <div class="headline text-xs-center">Material Design</div>
+                  <v-card-title primary-title class="layout justify-center ">
+                    <div class="headline text-xs-center ">Material Design</div>
                   </v-card-title>
                   <v-card-text>
                     Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus
@@ -91,12 +133,12 @@
                 </v-card>
               </v-flex>
               <v-flex xs12 md4>
-                <v-card class="elevation-0 transparent">
-                  <v-card-text class="text-xs-center">
-                    <v-icon x-large class="blue--text text--lighten-2">flash_on</v-icon>
+                <v-card class="elevation-0 transparent ">
+                  <v-card-text class="text-xs-center ">
+                    <v-icon x-large class="blue--text text--lighten-2 ">flash_on</v-icon>
                   </v-card-text>
-                  <v-card-title primary-title class="layout justify-center">
-                    <div class="headline">Fast development</div>
+                  <v-card-title primary-title class="layout justify-center ">
+                    <div class="headline ">Fast development</div>
                   </v-card-title>
                   <v-card-text>
                     Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus
@@ -106,12 +148,12 @@
                 </v-card>
               </v-flex>
               <v-flex xs12 md4>
-                <v-card class="elevation-0 transparent">
-                  <v-card-text class="text-xs-center">
-                    <v-icon x-large class="blue--text text--lighten-2">build</v-icon>
+                <v-card class="elevation-0 transparent ">
+                  <v-card-text class="text-xs-center ">
+                    <v-icon x-large class="blue--text text--lighten-2 ">build</v-icon>
                   </v-card-text>
-                  <v-card-title primary-title class="layout justify-center">
-                    <div class="headline text-xs-center">Completely Open Sourced</div>
+                  <v-card-title primary-title class="layout justify-center ">
+                    <div class="headline text-xs-center ">Completely Open Sourced</div>
                   </v-card-title>
                   <v-card-text>
                     Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus
@@ -129,11 +171,11 @@
 
     <section>
       <v-container grid-list-xl>
-        <v-layout row wrap justify-center class="my-5">
+        <v-layout row wrap justify-center class="my-5 ">
           <v-flex xs12 sm4>
-            <v-card class="elevation-0 transparent">
-              <v-card-title primary-title class="layout justify-center">
-                <div class="headline">Company info</div>
+            <v-card class="elevation-0 transparent ">
+              <v-card-title primary-title class="layout justify-center ">
+                <div class="headline ">Company info</div>
               </v-card-title>
               <v-card-text>
                 Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus
@@ -143,17 +185,17 @@
             </v-card>
           </v-flex>
           <v-flex xs12 sm4 offset-sm1>
-            <v-card class="elevation-0 transparent">
-              <v-card-title primary-title class="layout justify-center">
-                <div class="headline">Contact us</div>
+            <v-card class="elevation-0 transparent ">
+              <v-card-title primary-title class="layout justify-center ">
+                <div class="headline ">Contact us</div>
               </v-card-title>
               <v-card-text>
                 Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
               </v-card-text>
-              <v-list class="transparent">
+              <v-list class="transparent ">
                 <v-list-tile>
                   <v-list-tile-action>
-                    <v-icon class="blue--text text--lighten-2">phone</v-icon>
+                    <v-icon class="blue--text text--lighten-2 ">phone</v-icon>
                   </v-list-tile-action>
                   <v-list-tile-content>
                     <v-list-tile-title>208-871-5839</v-list-tile-title>
@@ -161,7 +203,7 @@
                 </v-list-tile>
                 <v-list-tile>
                   <v-list-tile-action>
-                    <v-icon class="blue--text text--lighten-2">place</v-icon>
+                    <v-icon class="blue--text text--lighten-2 ">place</v-icon>
                   </v-list-tile-action>
                   <v-list-tile-content>
                     <v-list-tile-title>Chicago, US</v-list-tile-title>
@@ -169,7 +211,7 @@
                 </v-list-tile>
                 <v-list-tile>
                   <v-list-tile-action>
-                    <v-icon class="blue--text text--lighten-2">email</v-icon>
+                    <v-icon class="blue--text text--lighten-2 ">email</v-icon>
                   </v-list-tile-action>
                   <v-list-tile-content>
                     <v-list-tile-title>john@vuetifyjs.com</v-list-tile-title>
@@ -187,26 +229,70 @@
 
 <script>
   import Resume from './Resume'
+  import PortfolioSample from './PortfolioSample'
+
+  function CalcClientHeight() {
+    return Math.max(document.documentElement.clientHeight, window.innerHeight)
+  }
 
   export default {
     name: 'home',
     data() {
       return {
+        clientHeight: CalcClientHeight()
       }
     },
     components: {
-      Resume
+      Resume,
+      PortfolioSample
     },
     mounted() {
+    },
+    computed: {
+      projects() {
+        return this.$store.state.projects;
+      }
     }
   }
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- Add "scoped " attribute to limit CSS to this component only -->
 <style>
+  a :hover {
+    text-decoration: none;
+  }
+
+  .section-title {
+    font-size: 4rem;
+    margin-top: 4rem;
+  }
+
+  .typer-text {
+    font-size: 1.6rem;
+  }
+
   .cover-page-container {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .objective-statement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .objective-statement-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #scroll-down-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
   }
 
   .site-header {
@@ -274,6 +360,7 @@
   .cover-view {
     height: 100vh;
   }
+
   /* @media screen and (min-width: 1024px) {
     .cover-view {
       height: 70vh;

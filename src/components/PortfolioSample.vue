@@ -1,115 +1,43 @@
 <template>
-    <div class="home">
-        <v-container fluid grid-list-md class="transparent">
-            <v-layout row wrap>
+    <v-card>
+        <!-- picture & Title -->
+        <!-- <router-link :to="card.link"> -->
 
-                <!-- load results -->
-                <v-flex v-bind="{ [`sm${card.flex}`]: true }" v-for="card in results" :key="card.name">
+        <img :src="card.image" alt="img" class="img-responsive">
+        <!-- <v-card-media :src="card.image" height="300" @click.stop="expandKeep(card)" contain>
+        </v-card-media> -->
 
-                    <v-card>
-                        <!-- picture & Title -->
-                        <v-card-media :src="card.imgUrl" :height="minImgHeight" @click.stop="expandKeep(card)">
-                            <v-container fill-height fluid>
-                                <v-layout fill-height>
-                                    <v-flex xs12 align-end flexbox>
-                                        <span class="headline white--text" v-text="card.name"></span>
-                                    </v-flex>
-                                </v-layout>
-                            </v-container>
-                        </v-card-media>
+        <!-- </router-link> -->
 
-                        <!-- button row -->
-                        <v-card-actions class="white">
-                            <v-spacer></v-spacer>
-                            <v-btn icon>
-                                <v-icon class="grey--text">share</v-icon>
-                            </v-btn>
-                        </v-card-actions>
+        <!-- button row -->
+        <v-card-actions class="white">
+            <v-spacer></v-spacer>
+            <v-btn icon>
+                <v-icon class="grey--text">share</v-icon>
+            </v-btn>
+        </v-card-actions>
 
-                        <!-- description and counter displays -->
-                        <v-card-text>
-                            <span class="white--text" v-text="card.description"></span>
-                        </v-card-text>
-                        <v-layout row class="card-footer-row">
-                            <v-flex xs12 md6>
-                                <v-icon class="grey--text bottom-icons">remove_red_eye</v-icon>
-                                <span class="grey--text" v-text="card.views.length"></span>
-                                <v-icon class="grey--text bottom-icons">bookmark</v-icon>
-                                <span class="grey--text" v-text="card.saves"></span>
-                            </v-flex>
-                            <!-- Chip  -->
-                            <v-flex xs12 md6 class="chip-keep">
-                                <v-chip>
-                                    <v-avatar>
-                                        <img :src="card.creatorPhoto" alt="creator photo">
-                                    </v-avatar>
-                                    {{card.creatorName}}
-                                </v-chip>
-                            </v-flex>
-                        </v-layout>
-                    </v-card>
-
+        <!-- description and counter displays -->
+        <v-card-text>
+            <v-layout row>
+                <v-flex xs12 class="card-text">
+                    <span class="headline white--text" v-text="card.title"></span>
+                    <span class="white--text" v-text="card.description"></span>
                 </v-flex>
-                <!-- end load results -->
-
-                <!-- Modal (expanded view)-->
-                <v-dialog v-model="dialog" lazy absolute :width="viewWidth" persistent>
-                    <keep></keep>
-                </v-dialog>
-
-                <!-- save keep modal -->
-                <v-dialog v-model="showSaveMenu" lazy absolute :width="viewWidth" persistent>
-                    <v-card>
-                        <v-card-media class="modal-image" :src="activeKeep.imgUrl" height="300">
-                            <v-container fill-height fluid>
-                                <v-layout fill-height>
-                                    <v-flex xs12 align-end flexbox class="save-menu-header">
-                                        <span class="headline white--text" v-text="activeKeep.name"></span>
-                                        <v-spacer></v-spacer>
-                                        <v-btn fab medium class="transparent" style="box-shadow:none" @click="CloseSaveWindow">
-                                            <v-icon medium>close</v-icon>
-                                        </v-btn>
-
-                                    </v-flex>
-                                </v-layout>
-                            </v-container>
-                        </v-card-media>
-
-                        <v-card-title>
-                            <div class="headline">Save keep</div>
-                        </v-card-title>
-                        <v-card-text>
-                            <!-- need to get the vault from the dropdown menu -->
-                            <div class="white--text" style="margin-bottom: 5rem;">{{activeKeep.description}}</div>
-                            <v-form>
-                                <v-select label="Choose Vault" v-model="selectedVault" :items="vaults" item-text="name" item-value="vault" dark required></v-select>
-                                <v-btn v-if="selectedVault" class="save-button" success dark @click="SaveKeep">Send It!</v-btn>
-                                <v-btn v-else class="save-button" success dark @click="SaveKeep" disabled>Save</v-btn>
-                            </v-form>
-                        </v-card-text>
-                    </v-card>
-                </v-dialog>
-
-                <v-dialog v-model="saveKeepSuccess" lazy absolute persistent :width="viewWidth">
-                    <v-card>
-
-                        <v-card-title class="headline">Success</v-card-title>
-                        <v-card-text>
-                            <p>
-                                <v-icon medium>check_circle</v-icon> Save Successful</p>
-                            <v-btn success dark @click="CloseSuccessMessage">Ok</v-btn>
-                        </v-card-text>
-                    </v-card>
-                </v-dialog>
-
-
             </v-layout>
-        </v-container>
-    </div>
+            <v-layout row>
+                <v-flex xs6 sm3 v-for="icon in card.icons" class="tech-icon-container">
+                    <img :src="icon.path" alt="tech" class="tech-icon img-responsive">
+                    <span v-text="icon.name"></span>
+                </v-flex>
+            </v-layout>
+        </v-card-text>
+    </v-card>
+
+
 </template>
 
 <script>
-    import Keep from './Keep'
 
     function CalculateModalW() {
         var vw = Math.max(document.documentElement.clientWidth, window.innerWidth)
@@ -136,7 +64,7 @@
 
 
     export default {
-        name: 'home',
+        name: 'portfoliosample',
         data() {
             return {
                 viewWidth: CalculateModalW(),
@@ -146,55 +74,57 @@
             }
         },
         components: {
-            Keep
         },
+        props: [
+            "card"
+        ],
         methods: {
-            expandKeep(keep) {
-                this.$store.commit("setMainDialog", true);
-                this.$store.dispatch('SetActiveKeep', keep)
-                this.$store.dispatch('AddView', keep)
-            },
-            CloseSaveWindow() {
-                this.$store.commit("setShowSaveMenu", false);
-                this.$store.commit("setMainDialog", false);
+            // expandKeep(keep) {
+            //     this.$store.commit("setMainDialog", true);
+            //     this.$store.dispatch('SetActiveKeep', keep)
+            //     this.$store.dispatch('AddView', keep)
+            // },
+            // CloseSaveWindow() {
+            //     this.$store.commit("setShowSaveMenu", false);
+            //     this.$store.commit("setMainDialog", false);
 
-            },
-            SaveKeep() {
-                this.$store.dispatch("SaveActiveKeep", this.selectedVault._id)
-                this.$store.commit("setShowSaveMenu", false);
-                this.$store.commit("setMainDialog", false);
+            // },
+            // SaveKeep() {
+            //     this.$store.dispatch("SaveActiveKeep", this.selectedVault._id)
+            //     this.$store.commit("setShowSaveMenu", false);
+            //     this.$store.commit("setMainDialog", false);
 
-            },
-            CloseSuccessMessage() {
-                this.$store.commit("SetSaveKeepSuccess", false)
-            }
+            // },
+            // CloseSuccessMessage() {
+            //     this.$store.commit("SetSaveKeepSuccess", false)
+            // }
         },
         computed: {
-            dialog() {
-                return this.$store.state.mainDialog;
+            // dialog() {
+            //     return this.$store.state.mainDialog;
+            // },
+            projects() {
+                return this.$store.state.projects;
             },
-            results() {
-                return this.$store.state.results;
-            },
-            activeKeep() {
-                return this.$store.state.activeKeep
-            },
-            loggedIn() {
-                return this.$store.state.loggedIn;
-            },
-            vaults() {
-                return this.$store.state.vaults;
-            },
-            showSaveMenu() {
-                return this.$store.state.showSaveMenu;
-            },
-            saveKeepSuccess() {
-                return this.$store.state.saveKeepSuccess;
-            }
+            // activeKeep() {
+            //     return this.$store.state.activeKeep
+            // },
+            // loggedIn() {
+            //     return this.$store.state.loggedIn;
+            // },
+            // vaults() {
+            //     return this.$store.state.vaults;
+            // },
+            // showSaveMenu() {
+            //     return this.$store.state.showSaveMenu;
+            // },
+            // saveKeepSuccess() {
+            //     return this.$store.state.saveKeepSuccess;
+            // }
         },
         mounted() {
-            this.$store.dispatch('GetKeeps')
-            this.$store.dispatch('getAuth')
+            // this.$store.dispatch('GetKeeps')
+            // this.$store.dispatch('getAuth')
         },
     }
 
@@ -210,6 +140,18 @@
     h2 {
         font-weight: normal;
     }
+
+    .tech-icon-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tech-icon {
+        max-height: 50px;
+    }
+
 
     ul {
         list-style-type: none;
@@ -254,8 +196,9 @@
         margin-left: 1.1rem;
     }
 
-    .card-footer-row {
+    .card-text {
         display: flex;
+        flex-direction: column;
     }
 
     .save-menu-header {
