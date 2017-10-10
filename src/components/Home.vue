@@ -29,9 +29,9 @@
     <section>
 
       <v-parallax class="parallax-image" src="//res.cloudinary.com/dvh7zccln/image/upload/v1506560973/SHP_0282_e5rzfg.jpg" :height="clientHeight">
-        <v-container fluid grid-list-md class="transparent" style="display:flex">
+        <v-container fluid grid-list-md class="transparent resume-highlights">
 
-          <v-layout row text-center class="objective-statement-container">
+          <v-layout row text-center class="centered-container">
             <v-flex xs12 sm8 class="objective-statement">
               <v-card class="elevation-20">
                 <v-card-media src="http://res.cloudinary.com/dvh7zccln/image/upload/v1507596361/icons/shutterstock_320549678.jpg" height="300">
@@ -67,6 +67,26 @@
               </v-card>
             </v-flex>
           </v-layout>
+          <!-- <v-layout row>
+            <v-flex xs12 class="skills-title-row">
+              <div class="text-xs-center">
+                  <span class="section-subtitle">Skills</span>
+              </div>
+            </v-flex>
+          </v-layout> -->
+          <!-- <v-layout row>
+            <v-flex xs6 sm4 md3>
+              <v-card color="blue-grey darken-2" class="white--text">
+                <v-card-title primary-title>
+                  <div class="headline">Unlimited music now</div>
+                  <div>Listen to your favorite artists and albums whenenver and wherever, online and offline.</div>
+                </v-card-title>
+                <v-card-actions>
+                  <v-btn flat dark>Listen now</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-flex>
+          </v-layout> -->
         </v-container>
 
         <v-layout row>
@@ -87,7 +107,7 @@
           </div>
         </v-flex>
       </v-layout>
-      <v-container fluid grid-list-md class="transparent ">
+      <v-container fluid grid-list-md class="transparent">
 
         <v-layout row wrap text-center>
 
@@ -96,11 +116,15 @@
           </v-flex>
         </v-layout>
 
+        <v-layout row>
+          <v-flex xs12 class="centered-container">
+            <router-link :to="{ name: 'Portfolio' }">
+              <v-btn primary dark style=" margin-top:20px; ">View Portfolio</v-btn>
+            </router-link>
+          </v-flex>
+        </v-layout>
       </v-container>
 
-      <v-btn class="blue lighten-2 mt-5 " dark large href="/pre-made-themes ">
-        See More
-      </v-btn>
 
     </section>
 
@@ -108,9 +132,9 @@
       <v-layout column wrap class="my-5 " align-center>
         <v-flex xs12 sm4 class="my-3 ">
           <div class="text-xs-center ">
-            <h2 class="headline ">Recent Projects</h2>
+            <h2 class="headline ">Primary Skills</h2>
             <span class="subheading ">
-              See what I've been up to
+              tools and technologies
             </span>
           </div>
         </v-flex>
@@ -119,16 +143,16 @@
             <v-layout row wrap align-center>
               <v-flex xs12 md4>
                 <v-card class="elevation-0 transparent ">
-                  <v-card-text class="text-xs-center ">
-                    <v-icon x-large class="blue--text text--lighten-2 ">color_lens</v-icon>
+                  <v-card-text class="text-xs-center skill-container">
+                    <img src="http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/logo.png" class="img-responsive skill-img">
                   </v-card-text>
                   <v-card-title primary-title class="layout justify-center ">
-                    <div class="headline text-xs-center ">Material Design</div>
+                    <div class="headline text-xs-center ">Vue.js</div>
                   </v-card-title>
                   <v-card-text>
-                    Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus
-                    et netus et malesuada fames ac turpis egestas. Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum
-                    tincidunt. Suspendisse potenti.
+                    My favorite frontend JavaScript framework. With approximately 400 hours of experience building full-stack applications in Vue including:
+                    Keepr, Kanban, Inspire, Tattoo-Me, and even this page, I am very comfortable building complex frontend
+                    applications using this framework.
                   </v-card-text>
                 </v-card>
               </v-flex>
@@ -232,7 +256,7 @@
   import PortfolioSample from './PortfolioSample'
 
   function CalcClientHeight() {
-    return Math.max(document.documentElement.clientHeight, window.innerHeight)
+    return 1.2 * (Math.max(document.documentElement.clientHeight, window.innerHeight))
   }
 
   export default {
@@ -278,16 +302,35 @@
     flex-direction: column;
   }
 
+  .resume-highlights {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .objective-statement {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .objective-statement-container {
+  .centered-container {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .skills-title-row {
+    /* background: white; */
+    height: auto;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .section-subtitle {
+    font-size: 2rem;
+    /* color:dimgray; */
+    box-shadow: 2em
   }
 
   #scroll-down-icon {
@@ -361,6 +404,15 @@
     height: 100vh;
   }
 
+  .skill-img {
+    max-height: 80px;
+    max-width: 80px;
+  }
+
+  .skill-container {
+    display: flex;
+    justify-content: center;
+  }
   /* @media screen and (min-width: 1024px) {
     .cover-view {
       height: 70vh;
