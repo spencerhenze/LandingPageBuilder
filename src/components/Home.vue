@@ -141,8 +141,9 @@
         <v-flex xs12>
           <v-container grid-list-xl>
             <v-layout row wrap align-center>
-              <v-flex xs12 md4>
-                <v-card class="elevation-0 transparent ">
+              <v-flex xs12 md4 v-for="card in mainskills">
+                <skill :card="card"></skill>
+                <!-- <v-card class="elevation-0 transparent ">
                   <v-card-text class="text-xs-center skill-container">
                     <img src="http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/logo.png" class="img-responsive skill-img">
                   </v-card-text>
@@ -184,7 +185,7 @@
                     et netus et malesuada fames ac turpis egestas. Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum
                     tincidunt. Suspendisse potenti.
                   </v-card-text>
-                </v-card>
+                </v-card> -->
               </v-flex>
             </v-layout>
           </v-container>
@@ -254,6 +255,7 @@
 <script>
   import Resume from './Resume'
   import PortfolioSample from './PortfolioSample'
+  import Skill from './Skill'
 
   function CalcClientHeight() {
     return 1.2 * (Math.max(document.documentElement.clientHeight, window.innerHeight))
@@ -268,13 +270,17 @@
     },
     components: {
       Resume,
-      PortfolioSample
+      PortfolioSample,
+      Skill
     },
     mounted() {
     },
     computed: {
       projects() {
         return this.$store.state.projects;
+      },
+      mainskills() {
+        return this.$store.state.mainskills;
       }
     }
   }
@@ -404,7 +410,7 @@
     height: 100vh;
   }
 
-  .skill-img {
+  /* .skill-img {
     max-height: 80px;
     max-width: 80px;
   }
@@ -412,7 +418,7 @@
   .skill-container {
     display: flex;
     justify-content: center;
-  }
+  } */
   /* @media screen and (min-width: 1024px) {
     .cover-view {
       height: 70vh;

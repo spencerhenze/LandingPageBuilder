@@ -86,8 +86,13 @@ var store = new vuex.Store({
                 ],
                 link: "https://zen-kanban.herokuapp.com"
             },
-
-
+        ],
+        mainskills: [
+            {
+                title: "Vue.js",
+                img:"http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/logo.png",
+                description: "My favorite frontend JavaScript framework. With approximately 400 hours of experience building full-stack applications in Vue including:Keepr, Kanban, Inspire, Tattoo-Me, and even this page, I am very comfortable building complex frontend applications using this framework."                
+            }
         ],
         loginWindow: false,
         registerForm: false,
