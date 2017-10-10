@@ -1,13 +1,9 @@
 <template>
     <v-card>
         <!-- picture & Title -->
-        <!-- <router-link :to="card.link"> -->
-
-        <img :src="card.image" alt="img" class="img-responsive">
-        <!-- <v-card-media :src="card.image" height="300" @click.stop="expandKeep(card)" contain>
-        </v-card-media> -->
-
-        <!-- </router-link> -->
+        <a :href="card.link" target="_blank">
+            <img :src="card.image" alt="img" class="img-responsive">
+        </a>
 
         <!-- button row -->
         <v-card-actions class="white">
@@ -38,7 +34,6 @@
 </template>
 
 <script>
-
     function CalculateModalW() {
         var vw = Math.max(document.documentElement.clientWidth, window.innerWidth)
         if (vw <= 600) {
@@ -79,52 +74,13 @@
             "card"
         ],
         methods: {
-            // expandKeep(keep) {
-            //     this.$store.commit("setMainDialog", true);
-            //     this.$store.dispatch('SetActiveKeep', keep)
-            //     this.$store.dispatch('AddView', keep)
-            // },
-            // CloseSaveWindow() {
-            //     this.$store.commit("setShowSaveMenu", false);
-            //     this.$store.commit("setMainDialog", false);
-
-            // },
-            // SaveKeep() {
-            //     this.$store.dispatch("SaveActiveKeep", this.selectedVault._id)
-            //     this.$store.commit("setShowSaveMenu", false);
-            //     this.$store.commit("setMainDialog", false);
-
-            // },
-            // CloseSuccessMessage() {
-            //     this.$store.commit("SetSaveKeepSuccess", false)
-            // }
         },
         computed: {
-            // dialog() {
-            //     return this.$store.state.mainDialog;
-            // },
             projects() {
                 return this.$store.state.projects;
             },
-            // activeKeep() {
-            //     return this.$store.state.activeKeep
-            // },
-            // loggedIn() {
-            //     return this.$store.state.loggedIn;
-            // },
-            // vaults() {
-            //     return this.$store.state.vaults;
-            // },
-            // showSaveMenu() {
-            //     return this.$store.state.showSaveMenu;
-            // },
-            // saveKeepSuccess() {
-            //     return this.$store.state.saveKeepSuccess;
-            // }
         },
         mounted() {
-            // this.$store.dispatch('GetKeeps')
-            // this.$store.dispatch('getAuth')
         },
     }
 
