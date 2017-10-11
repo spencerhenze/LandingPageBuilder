@@ -3,6 +3,17 @@
         <v-layout row>
             <v-flex xs12 class="text-xs-center">
                 <h1>Skills</h1>
+                <v-progress-circular
+                :size="80"
+                :width="15"
+                :rotate="-90"
+                :value="90"
+                color="primary"
+                class="blue--text"
+              >
+                {{ 90 }}%
+              </v-progress-circular>
+
             </v-flex>
         </v-layout>
     </div>

@@ -1,5 +1,5 @@
 <template>
-    <v-card>
+    <v-card class="project-card">
         <!-- picture & Title -->
         <a :href="card.link" target="_blank">
             <img :src="card.image" alt="img" class="img-responsive">
@@ -88,6 +88,11 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    .project-card {
+        min-height: 500px !important;
+    }
+
+
     .modal-image {
         height: 50vh !important;
     }

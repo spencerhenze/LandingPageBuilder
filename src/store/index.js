@@ -89,9 +89,26 @@ var store = new vuex.Store({
         ],
         mainskills: [
             {
-                title: "Vue.js",
+                title: "JavaScript",
+                img:"http://res.cloudinary.com/dvh7zccln/image/upload/v1507667954/learn-javascript_ztffct.png",
+                description: "The language of the web. JavaScript is the main language I have worked with. I have over 500 hours of experience writing JavaScript.",                
+                interval: {},
+                value: 90
+            },
+            {
+                title: "Vue",
                 img:"http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/logo.png",
-                description: "My favorite frontend JavaScript framework. With approximately 400 hours of experience building full-stack applications in Vue including: Keepr, Kanban, Inspire, Tattoo-Me, and even this page, I am very comfortable building complex frontend applications using this framework."                
+                description: "With approximately 400 hours of experience building full-stack applications in Vue, I am very comfortable using this framework."                
+            },
+            {
+                title: "Node",
+                img:"https://res.cloudinary.com/dvh7zccln/image/upload/v1507677453/icons/nodejslogo.png",
+                description: "Most of my backend server code is written in Node using the express JS library."                
+            },
+            {
+                title: "C# .NET Core",
+                img:"http://res.cloudinary.com/dvh7zccln/image/upload/v1507678913/c-logo-icon-28402_vps7su.png",
+                description: "400 hours of experience ranging from console applications to backend server code using entity framework."                
             }
         ],
         loginWindow: false,

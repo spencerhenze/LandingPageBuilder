@@ -67,35 +67,7 @@
               </v-card>
             </v-flex>
           </v-layout>
-          <!-- <v-layout row>
-            <v-flex xs12 class="skills-title-row">
-              <div class="text-xs-center">
-                  <span class="section-subtitle">Skills</span>
-              </div>
-            </v-flex>
-          </v-layout> -->
-          <!-- <v-layout row>
-            <v-flex xs6 sm4 md3>
-              <v-card color="blue-grey darken-2" class="white--text">
-                <v-card-title primary-title>
-                  <div class="headline">Unlimited music now</div>
-                  <div>Listen to your favorite artists and albums whenenver and wherever, online and offline.</div>
-                </v-card-title>
-                <v-card-actions>
-                  <v-btn flat dark>Listen now</v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-flex>
-          </v-layout> -->
         </v-container>
-
-        <v-layout row>
-          <v-flex xs6>
-
-          </v-flex>
-        </v-layout>
-
-        <!-- <v-layout row></v-layout> -->
       </v-parallax>
     </section>
 
@@ -119,7 +91,7 @@
         <v-layout row>
           <v-flex xs12 class="centered-container">
             <router-link :to="{ name: 'Portfolio' }">
-              <v-btn primary dark style=" margin-top:20px; ">View Portfolio</v-btn>
+              <v-btn primary dark style=" margin:40px; ">View Portfolio</v-btn>
             </router-link>
           </v-flex>
         </v-layout>
@@ -129,119 +101,95 @@
     </section>
 
     <section>
-      <v-layout column wrap class="my-5 " align-center>
-        <v-flex xs12 sm4 class="my-3 ">
-          <div class="text-xs-center ">
-            <h2 class="headline ">Primary Skills</h2>
-            <span class="subheading ">
-              tools and technologies
+      <v-parallax class="second-parallax-image" src="//res.cloudinary.com/dvh7zccln/image/upload/v1507676000/nathan-anderson-319341_oovuco.jpg"
+        :height="clientHeight">
+        <v-container grid-list-lg class="skills-preview-container">
+
+          <v-layout column align-center>
+            <v-flex xs12 class="my-3 ">
+              <div class="text-xs-center ">
+                <h2 class="section-title ">Primary Skills</h2>
+                <span class="subheading ">
+              main tools and technologies
             </span>
-          </div>
-        </v-flex>
-        <v-flex xs12>
-          <v-container grid-list-xl>
-            <v-layout row wrap align-center>
-              <v-flex xs12 md4 v-for="card in mainskills">
-                <skill :card="card"></skill>
-                <!-- <v-card class="elevation-0 transparent ">
-                  <v-card-text class="text-xs-center skill-container">
-                    <img src="http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/logo.png" class="img-responsive skill-img">
-                  </v-card-text>
-                  <v-card-title primary-title class="layout justify-center ">
-                    <div class="headline text-xs-center ">Vue.js</div>
-                  </v-card-title>
-                  <v-card-text>
-                    My favorite frontend JavaScript framework. With approximately 400 hours of experience building full-stack applications in Vue including:
-                    Keepr, Kanban, Inspire, Tattoo-Me, and even this page, I am very comfortable building complex frontend
-                    applications using this framework.
-                  </v-card-text>
-                </v-card>
-              </v-flex>
-              <v-flex xs12 md4>
-                <v-card class="elevation-0 transparent ">
-                  <v-card-text class="text-xs-center ">
-                    <v-icon x-large class="blue--text text--lighten-2 ">flash_on</v-icon>
-                  </v-card-text>
-                  <v-card-title primary-title class="layout justify-center ">
-                    <div class="headline ">Fast development</div>
-                  </v-card-title>
-                  <v-card-text>
-                    Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus
-                    et netus et malesuada fames ac turpis egestas. Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum
-                    tincidunt. Suspendisse potenti.
-                  </v-card-text>
-                </v-card>
-              </v-flex>
-              <v-flex xs12 md4>
-                <v-card class="elevation-0 transparent ">
-                  <v-card-text class="text-xs-center ">
-                    <v-icon x-large class="blue--text text--lighten-2 ">build</v-icon>
-                  </v-card-text>
-                  <v-card-title primary-title class="layout justify-center ">
-                    <div class="headline text-xs-center ">Completely Open Sourced</div>
-                  </v-card-title>
-                  <v-card-text>
-                    Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus
-                    et netus et malesuada fames ac turpis egestas. Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum
-                    tincidunt. Suspendisse potenti.
-                  </v-card-text>
-                </v-card> -->
+              </div>
+            </v-flex>
+            <v-flex xs12>
+              <v-layout row wrap align-center class="skill-container">
+                <v-flex xs12 sm6 md4 v-for="card in mainskills" >
+                  <skill :card="card"></skill>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+          </v-layout>
+          <v-layout row class="all-skills-button">
+              <v-flex xs12 class="centered-container">
+                <router-link :to="{ name: 'Skills' }">
+                  <v-btn primary dark style=" margin:40px; ">All Skills</v-btn>
+                </router-link>
               </v-flex>
             </v-layout>
           </v-container>
-        </v-flex>
-      </v-layout>
+    
+        </v-container>
+      </v-parallax>
     </section>
 
 
     <section>
       <v-container grid-list-xl>
         <v-layout row wrap justify-center class="my-5 ">
-          <v-flex xs12 sm4>
+          <v-flex xs12 sm6 class="contact-me-container">
             <v-card class="elevation-0 transparent ">
               <v-card-title primary-title class="layout justify-center ">
-                <div class="headline ">Company info</div>
+                <div class="section-title ">Contact me</div>
               </v-card-title>
-              <v-card-text>
-                Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus
-                et netus et malesuada fames ac turpis egestas. Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum
-                tincidunt. Suspendisse potenti.
-              </v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex xs12 sm4 offset-sm1>
-            <v-card class="elevation-0 transparent ">
-              <v-card-title primary-title class="layout justify-center ">
-                <div class="headline ">Contact us</div>
-              </v-card-title>
-              <v-card-text>
-                Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+              <v-card-text class="text-xs-center">
+                I'm excited to talk more about how I can add value to your team. Contact me using any of the methods below.
               </v-card-text>
               <v-list class="transparent ">
-                <v-list-tile>
-                  <v-list-tile-action>
-                    <v-icon class="blue--text text--lighten-2 ">phone</v-icon>
-                  </v-list-tile-action>
-                  <v-list-tile-content>
-                    <v-list-tile-title>208-871-5839</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile>
-                  <v-list-tile-action>
-                    <v-icon class="blue--text text--lighten-2 ">place</v-icon>
-                  </v-list-tile-action>
-                  <v-list-tile-content>
-                    <v-list-tile-title>Chicago, US</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile>
-                  <v-list-tile-action>
-                    <v-icon class="blue--text text--lighten-2 ">email</v-icon>
-                  </v-list-tile-action>
-                  <v-list-tile-content>
-                    <v-list-tile-title>john@vuetifyjs.com</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
+                <a href="tel:2088715839">
+                  <v-list-tile>
+                    <v-list-tile-action>
+                      <v-icon class="blue--text text--lighten-2 ">phone</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                      <v-list-tile-title>208-871-5839</v-list-tile-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                </a>
+                <a href="mailto:spencerhenze@gmail.com">
+                  <v-list-tile>
+                    <v-list-tile-action>
+                      <v-icon class="blue--text text--lighten-2 ">email</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                      <v-list-tile-title>spencerhenze@gmail.com</v-list-tile-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                </a>
+                <a href="https://www.linkedin.com/in/spencer-henze-45a18887">
+                  <v-list-tile>
+                    <v-list-tile-action>
+                      <v-icon class="blue--text text--lighten-2 ">fa-linkedin</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                      <v-list-tile-title>linkedin</v-list-tile-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                </a>
+
+
+                <a href="https://github.com/spencerhenze">
+                  <v-list-tile>
+                    <v-list-tile-action>
+                      <v-icon class="blue--text text--lighten-2 ">fa-github</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                      <v-list-tile-title>github/spencerhenze</v-list-tile-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                </a>
               </v-list>
             </v-card>
           </v-flex>
@@ -294,7 +242,7 @@
   }
 
   .section-title {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-top: 4rem;
   }
 
@@ -326,11 +274,26 @@
     align-items: center;
   }
 
+  .skills-preview-container {
+    display:flex;
+    flex-direction:column;
+  }
+
   .skills-title-row {
     /* background: white; */
     height: auto;
     margin-left: -10px;
     margin-right: -10px;
+  }
+
+  .skill-container {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .all-skills-button {
+    align-self:center;
+
   }
 
   .section-subtitle {
@@ -402,6 +365,12 @@
     margin-right: -24px !important;
   }
 
+  .second-parallax-image {
+    margin-left: -24px !important;
+    margin-right: -24px !important;
+    display: cover;
+  }
+
   .project-card {
     width: 100%
   }
@@ -410,18 +379,8 @@
     height: 100vh;
   }
 
-  /* .skill-img {
-    max-height: 80px;
-    max-width: 80px;
+  .contact-me-container {
+    display:flex;
+    flex-direction: column;
   }
-
-  .skill-container {
-    display: flex;
-    justify-content: center;
-  } */
-  /* @media screen and (min-width: 1024px) {
-    .cover-view {
-      height: 70vh;
-    }
-  } */
 </style>
