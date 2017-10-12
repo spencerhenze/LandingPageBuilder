@@ -102,7 +102,7 @@
 
     <section>
       <v-parallax class="second-parallax-image" src="//res.cloudinary.com/dvh7zccln/image/upload/v1507676000/nathan-anderson-319341_oovuco.jpg"
-        :height="clientHeight">
+        height="auto">
         <v-container grid-list-lg class="skills-preview-container">
 
           <v-layout column align-center>
@@ -110,27 +110,27 @@
               <div class="text-xs-center ">
                 <h2 class="section-title ">Primary Skills</h2>
                 <span class="subheading ">
-              main tools and technologies
-            </span>
+                  main tools and technologies
+                </span>
               </div>
             </v-flex>
             <v-flex xs12>
               <v-layout row wrap align-center class="skill-container">
-                <v-flex xs12 sm6 md4 v-for="card in mainskills" >
+                <v-flex xs12 sm6 md4 v-for="card in mainskills">
                   <skill :card="card"></skill>
                 </v-flex>
               </v-layout>
             </v-flex>
           </v-layout>
           <v-layout row class="all-skills-button">
-              <v-flex xs12 class="centered-container">
-                <router-link :to="{ name: 'Skills' }">
-                  <v-btn primary dark style=" margin:40px; ">All Skills</v-btn>
-                </router-link>
-              </v-flex>
-            </v-layout>
-          </v-container>
-    
+            <v-flex xs12 class="centered-container">
+              <router-link :to="{ name: 'Skills' }">
+                <v-btn primary dark style=" margin:40px; ">All Skills</v-btn>
+              </router-link>
+            </v-flex>
+          </v-layout>
+        </v-container>
+
         </v-container>
       </v-parallax>
     </section>
@@ -139,7 +139,7 @@
     <section>
       <v-container grid-list-xl>
         <v-layout row wrap justify-center class="my-5 ">
-          <v-flex xs12 sm6 class="contact-me-container">
+          <v-flex xs12 sm6 md4 lg3 class="contact-me-container">
             <v-card class="elevation-0 transparent ">
               <v-card-title primary-title class="layout justify-center ">
                 <div class="section-title ">Contact me</div>
@@ -275,8 +275,8 @@
   }
 
   .skills-preview-container {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
   }
 
   .skills-title-row {
@@ -287,13 +287,12 @@
   }
 
   .skill-container {
-    display: flex;
-    align-items: baseline;
+    /* display: flex;
+    align-items: baseline; */
   }
 
   .all-skills-button {
-    align-self:center;
-
+    /* align-self: center; */
   }
 
   .section-subtitle {
@@ -380,7 +379,7 @@
   }
 
   .contact-me-container {
-    display:flex;
+    display: flex;
     flex-direction: column;
   }
 </style>

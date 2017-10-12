@@ -1,21 +1,43 @@
 <template>
     <div class="portfolio">
-        <v-layout row>
-            <v-flex xs12 class="text-xs-center">
-                <h1>Portfolio</h1>
+
+        <v-layout column wrap align-center>
+            <v-flex xs12>
+                <div class="text-xs-center">
+                    <h2 class="section-title">Portfolio</h2>
+                </div>
             </v-flex>
         </v-layout>
+        <v-container fluid grid-list-md class="transparent">
+
+            <v-layout row wrap text-center>
+
+                <v-flex xs12 sm4 v-for="card in projects ">
+                    <Project :card="card "></Project>
+                </v-flex>
+            </v-layout>
+        </v-container>
     </div>
 </template>
 
 <script>
+    import Project from './PortfolioSample'
+
     export default {
         name: 'portfolio',
         data() {
             return {
                 msg: 'Welcome to Your Vue.js App'
             }
-        }
+        },
+        computed: {
+            projects() {
+                return this.$store.state.projects;
+            }
+        },
+        components: {
+            Project
+        },
     }
 
 </script>
@@ -39,5 +61,15 @@
 
     a {
         color: #42b983;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .centered-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
