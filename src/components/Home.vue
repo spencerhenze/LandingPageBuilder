@@ -206,7 +206,7 @@
   import Skill from './Skill'
 
   function CalcClientHeight() {
-    return 1.2 * (Math.max(document.documentElement.clientHeight, window.innerHeight))
+    return Math.max(document.documentElement.clientHeight, window.innerHeight)
   }
 
   export default {

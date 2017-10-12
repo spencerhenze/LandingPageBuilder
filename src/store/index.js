@@ -86,29 +86,58 @@ var store = new vuex.Store({
                 ],
                 link: "https://zen-kanban.herokuapp.com"
             },
+            {
+                image: 'http://res.cloudinary.com/dvh7zccln/image/upload/v1507770603/icons/Screen_Shot_2017-10-11_at_7.09.30_PM.png',
+                title: 'Tattoo-Me',
+                description: 'A platform for tattoo artists to share and sell their designs as well as a place for customers to use AR to preview the designs on themselves.',
+                icons: [
+                    {
+                        name: "Vue",
+                        path: "http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/logo.png"
+                    },
+                    {
+                        name: "Node",
+                        path: "http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/nodejslogo.png"
+                    },
+                    {
+                        name: "Mongo DB",
+                        path: "http://res.cloudinary.com/dvh7zccln/image/upload/v1507599756/icons/mongodb_copy.png"
+                    }
+
+
+                ],
+                skills: [
+                    "Vue",
+                    "Javascript",
+                    "MongoDb",
+                    "NodeJs"
+                ],
+                link: "https://awesome-keepr.herokuapp.com"
+
+            }
         ],
         mainskills: [
             {
                 title: "JavaScript",
-                img:"http://res.cloudinary.com/dvh7zccln/image/upload/v1507667954/learn-javascript_ztffct.png",
-                description: "The language of the web. JavaScript is the main language I have worked with. I have over 500 hours of experience writing JavaScript.",                
+                img: "http://res.cloudinary.com/dvh7zccln/image/upload/v1507667954/learn-javascript_ztffct.png",
+                description: "The language of the web. JavaScript is the main language I have worked with. I have over 500 hours of experience writing JavaScript.",
                 interval: {},
                 value: 90
             },
             {
                 title: "Vue",
-                img:"http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/logo.png",
-                description: "With approximately 400 hours of experience building full-stack applications in Vue, I am very comfortable using this framework."                
+                img: "http://res.cloudinary.com/dvh7zccln/image/upload/v1507588424/icons/logo.png",
+                description: "With approximately 400 hours of experience building full-stack applications in Vue, I am very comfortable using this framework."
             },
             {
                 title: "Node",
-                img:"https://res.cloudinary.com/dvh7zccln/image/upload/v1507677453/icons/nodejslogo.png",
-                description: "Most of my backend server code is written in Node using the express JS library."                
+                img: "https://res.cloudinary.com/dvh7zccln/image/upload/v1507677453/icons/nodejslogo.png",
+                description: "Most of my backend server code is written in Node using the express JS library."
             },
             {
                 title: "C# .NET Core",
-                img:"http://res.cloudinary.com/dvh7zccln/image/upload/v1507678913/c-logo-icon-28402_vps7su.png",
-                description: "400 hours of experience ranging from console applications to backend server code using entity framework."                
+                img: "http://res.cloudinary.com/dvh7zccln/image/upload/v1507678913/c-logo-icon-28402_vps7su.png",
+                description: "400 hours of experience ranging from console applications to backend server code using entity framework."
             }
         ],
         loginWindow: false,
