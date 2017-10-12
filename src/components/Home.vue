@@ -53,19 +53,17 @@
 
                 <!-- description and counter displays -->
                 <v-card-text>
-                  To apply a solid 4-year education in business IT systems, along with 3.5 years of small business administration experience
-                  to an Jr. level software developer position in a growing business that can benefit from a motivated and
-                  business savvy team member who is excited to learn and continually add value to the company.
-                  <v-layout row>
-                    <v-flex xs12>
-                      <router-link :to="{ name: 'Resume' }">
-                        <v-btn primary dark style=" margin-top:20px; ">View Resume</v-btn>
-                      </router-link>
-                    </v-flex>
-                  </v-layout>
-                </v-card-text>
-              </v-card>
-            </v-flex>
+                  To apply software development experience, a 4 year education in business IT systems, and 3 years of small business administration
+                  experience to an entry level software developer position in a growing medium to large company.
+                  <v-flex xs12>
+                    <router-link :to="{ name: 'Resume' }">
+                      <v-btn primary dark style=" margin-top:20px; ">View Resume</v-btn>
+                    </router-link>
+                  </v-flex>
+          </v-layout>
+          </v-card-text>
+          </v-card>
+          </v-flex>
           </v-layout>
         </v-container>
       </v-parallax>
